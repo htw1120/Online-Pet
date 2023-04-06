@@ -1,0 +1,160 @@
+# Harrison Wynn
+# CS1400 - M01
+# Assignment 9
+
+Requirements Specification
+    Ask the user to input Blobber's name.
+    Ask the user to input the Blobber's color.
+    Ask the user to input the Blobber's radius.
+    Ask the user to input the Blobber's height.
+    Display:
+        Main Menu
+        (1) Display Name
+        (2) Change Name
+        (3) Display Color
+        (4) Change Color
+        (5) Feed Blobber
+        (6) Blobber Speak
+        (7) Exit
+        The Blobber's happiness rate.
+    Ask the user to make a selection from the 7 displayed options.
+        If they choose 1,
+            Display Blobber's name.
+        If they choose 2,
+            Ask the user to input a new name.
+            Display the new name.
+        If they choose 3,
+            Display Blobber's color.
+        If they choose 4,
+            Ask the user to input a new name.
+            Display the new name.
+        If they choose 5,
+            Ask the user to input how much they want to feed Blobber.
+        If they choose 6,
+            Display the name, color, and happiness level.
+        If they choose 7,
+            Display a statement thanking the user for taking care of Blobber.
+    If the happiness rate is too low or too high,
+        Display the happiness rate.
+        Display a statement saying that Blobber has turned to dust.
+        Display a statement thanking the user for taking care of Blobber.
+
+System Analysis
+    pi * pow(radius, 2) * height
+    if/else statements
+    Classes, Methods
+
+System Design
+    *****************************************
+    Blobber
+    *****************************************
+    -radius: int
+    -height: int
+    -color: str
+    -name: str
+    -time: float
+    -volume: float
+    *****************************************
+    Blobber()
+    feedBlobber(food: int):
+    blobberSpeak(): str
+    vitalsOK(): float
+    setColor(name: str): None
+    setName(name: str): None
+    getColor(): str
+    getName(): str
+    *****************************************
+    feedBlobber
+        Increase the radius of the shrinking Blobber.
+
+    blobberSpeak
+        Return a statement telling the Blobber's name, color, and happiness rate.
+
+    vitalsOK:
+        Determines the decimal of the shrinking Blobber in comparison to the original volume.
+
+    setColor
+        Sets the new inputted color.
+
+    setName
+        Sets the new inputted name.
+
+    getColor
+        Returns the inputted color.
+
+    getName
+        Returns the inputted name.
+
+    *****************************************
+
+    Import math
+    Import time
+    Call class Blobber:
+        Define the parameters as self, name, color, radius, height.
+            Set self.__radius equal to radius.
+            Set self.__height equal to height.
+            Set self.__color equal to color.
+            Set self.__name equal to name.
+            Set self.__time equal to time.time
+            Set self.__volume equal to the equation of a cylinder.
+        Define feedBlobber with parameters 'self' and 'food.'
+            Make an if statement if 'food' is greater than or equal to 0. If it does:
+                Add 'food' to self.__radius.
+        Define blobberSpeak with parameter 'self'
+            Set 'vitals' and 'blobberOK' equal to self.vitalsOK.
+            Return a statement with the name, color, and the percentage by calling 'vitals' formatted to be a percent.
+        Define vitalsOK with parameter 'self'
+            Set a while statement while something is true. If its true:
+                Set 'volume1' equal to the cylinder equation with the radius being self.__radius minus time.time - self.__time * .0002
+                Set 'vitals' equal to volume1 divided by self.__volume
+                Set an if statement if vitals is greater than .9 and less than 1.1. If it is:
+                    return 'vitals', and return True.
+                Set an else statement.
+                    return 'vitals', and return False.
+        Define setColor with parameters self and color.
+            Make an if statement if type(color) is equal to a string. If it does:
+                Set self.__color equal to color.
+        Define setName with parameters self and name.
+            Make an if statement if type(name) is equal to a string. If it does:
+                Set self.__name equal to name.
+        Define getColor with parameter self.
+            return self.__color
+        Define getName with parameter name.
+            return self.__name.
+
+Testing
+Test 1:
+    Name: Dan
+    Color: brown
+    Radius: 40
+    Height: 30
+    Make a selection:
+        (1) Display Name
+        (2) Change Name
+                New name: George
+        (3) Display Color
+        (4) Change Color
+                New color: red
+        (5) Feed Blobber
+                Amount to feed Blobber: 20
+        (6) Blobber Speak
+        (7) Exit
+PASS
+
+Test 2:
+    Name: Ted
+    Color: gold
+    Radius: 60
+    Height: 20
+    Make a selection:
+        (1) Display Name
+        (2) Change Name
+                New name: Kent
+        (3) Display Color
+        (4) Change Color
+                New color: green
+        (5) Feed Blobber
+                Amount to feed Blobber: 30
+        (6) Blobber Speak
+        (7) Exit
+PASS

@@ -1,0 +1,14 @@
+"r","122","""C:\Users\Harrison Wynn\AppData\Local\Programs\Python\Python39\python.exe"" ""C:/Users/Harrison Wynn/Documents/CS 1400 Homework/Wynn-Harrison-Assn9/modules/blobber.py""",,"PythonRunner",,"1636162883895","blobber.py"
+"o","122",,"Traceback (most recent call last):
+",,"stderr","1636162883939",
+"o","122",,"  File ""C:\Users\Harrison Wynn\Documents\CS 1400 Homework\Wynn-Harrison-Assn9\modules\blobber.py"", line 47, in <module>
+",,"stderr","1636162883939",
+"o","122",,"    print(type(Blobber.vitalsOK()))
+",,"stderr","1636162883939",
+"o","122",,"TypeError: vitalsOK() missing 1 required positional argument: 'self'
+",,"stderr","1636162883939",
+"o","122",,"
+Process finished with exit code 1
+",,"system","1636162883941",
+"r","123","""C:\Users\Harrison Wynn\AppData\Local\Programs\Python\Python39\python.exe"" ""C:/Users/Harrison Wynn/Documents/CS 1400 Homework/Wynn-Harrison-Assn9/modules/blobber.py""",,"PythonRunner",,"1636162892922","blobber.py"
+"r","124","""C:\Users\Harrison Wynn\AppData\Local\Programs\Python\Python39\python.exe"" ""C:/Users/Harrison Wynn/Documents/CS 1400 Homework/Wynn-Harrison-Assn9/modules/blobber.py""",,"PythonRunner",,"1636162920587","blobber.py"
