@@ -1,15 +1,15 @@
 
 
-from modules.blobster import Blobster
+from modules.blobster import Pet
 
 
 def main():
-    name = input("Enter your Blobster's name: ")
-    color = input("Enter your Blobster's color: ")
-    radius = eval(input("Enter your Blobster's radius: "))
-    height = eval(input("Enter your Blobster's height: "))
+    name = input("Enter your pet blobster's name: ")
+    color = input("Enter your pet blobster's color: ")
+    radius = eval(input("Enter your pet blobster's radius: "))
+    height = eval(input("Enter your pet blobster's height: "))
 
-    myBlobster = Blobster(name, color, radius, height)
+    myBlobster = Pet(name, color, radius, height)
 
     done = False
 
@@ -20,26 +20,26 @@ def main():
         print("\t(2) Change Name")
         print("\t(3) Display Color")
         print("\t(4) Change Color")
-        print("\t(5) Feed Blobster")
-        print("\t(6) Blobster Speak")
+        print("\t(5) Feed Pet")
+        print("\t(6) Pet Speak")
         print("\t(7) Exit")
 
         # Display current vitals and check to see if it has turned to dust
-        # This will catch cases where the Blobster was fed too much as well
+        # This will catch cases where the Pet was fed too much as well
         vitals, blobster_ok = myBlobster.vitalsOK()
-        print("Your Blobster is at " + format(vitals, ".2%") + " happiness")
+        print("Your Pet is at " + format(vitals, ".2%") + " happiness")
         if not blobster_ok:
-            print("Your Blobster turned to dust")
+            print("Your Pet turned to dust")
             break
 
         choice = eval(input("Make a selection: "))
         print()
 
-        # Check to see if the Blobster turned to dust while waiting for the user to make a selection
+        # Check to see if the Pet turned to dust while waiting for the user to make a selection
         vitals, blobster_ok = myBlobster.vitalsOK()
         if not blobster_ok:
-            print("Your Blobster is at " + format(vitals, ".2%") + " happiness")
-            print("Your Blobster turned to dust")
+            print("Your Pet is at " + format(vitals, ".2%") + " happiness")
+            print("Your Pet turned to dust")
             break
 
         if choice == 1:
@@ -57,31 +57,31 @@ def main():
         elif choice == 7:
             done = True
 
-    print("Thanks for taking care of a Blobster")
+    print("Thanks for taking care of a Pet")
 
 
 def displayName(blobster):
-    print("Your Blobster's name is " + blobster.getName().capitalize())
+    print("Your Pet's name is " + blobster.getName().capitalize())
 
 
 def changeName(blobster):
-    name = input("Enter Blobster's new name: ")
+    name = input("Enter Pet's new name: ")
     blobster.setName(name)
     displayName(blobster)
 
 
 def displayColor(blobster):
-    print("Your Blobster's color is " + blobster.getColor().lower())
+    print("Your Pet's color is " + blobster.getColor().lower())
 
 
 def changeColor(blobster):
-    color = input("Enter Blobster's new color: ")
+    color = input("Enter Pet's new color: ")
     blobster.setColor(color)
     displayColor(blobster)
 
 
 def feedBlobster(blobster):
-    food = eval(input("Enter amount to you feed your Blobster: "))
+    food = eval(input("Enter amount to you feed your Pet: "))
     blobster.feedBlobster(food)
 
 

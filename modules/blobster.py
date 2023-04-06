@@ -4,7 +4,7 @@ import math
 import time
 
 
-class Blobster:
+class Pet:
     def __init__(self, name, color, radius, height):
         self.__radius = radius
         self.__height = height
@@ -18,7 +18,7 @@ class Blobster:
             self.__radius += food
 
     def blobsterSpeak(self):
-        vitals, blobberOK = self.vitalsOK()
+        vitals, blobster_ok = self.vitalsOK()
         return ("My name is " + self.__name.capitalize() + ", and I am " + self.__color.lower()) + "\n" + \
                "My current happiness level is " + str(format(vitals, ".2%"))
 
