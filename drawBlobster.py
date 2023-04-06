@@ -1,7 +1,3 @@
-# Harrison Wynn
-# CS1400 - M01
-# Assignment 9
-
 import turtle
 
 
@@ -17,7 +13,7 @@ class Face:
         turtle.penup()
         turtle.goto(0, -100)
         turtle.pendown()
-        if self.__happy == True:
+        if self.__happy:
             turtle.fillcolor("yellow")
         else:
             turtle.fillcolor("red")
@@ -32,9 +28,9 @@ class Face:
         turtle.goto(-30, 30)
         turtle.pendown()
         turtle.begin_fill()
-        if self.__darkEyes == True:
+        if self.__darkEyes:
             turtle.fillcolor("black")
-        if self.__darkEyes == False:
+        if not self.__darkEyes:
             turtle.fillcolor("blue")
         turtle.circle(10)
         turtle.end_fill()
@@ -44,9 +40,9 @@ class Face:
         turtle.goto(30, 30)
         turtle.pendown()
         turtle.begin_fill()
-        if self.__darkEyes == True:
+        if self.__darkEyes:
             turtle.fillcolor("black")
-        if self.__darkEyes == False:
+        if not self.__darkEyes:
             turtle.fillcolor("blue")
         turtle.circle(10)
         turtle.end_fill()
@@ -57,7 +53,7 @@ class Face:
         turtle.goto(-40, -30)
         turtle.pendown()
         turtle.pensize(5)
-        if self.__smile == True:
+        if self.__smile:
             turtle.setheading(315)
             turtle.circle(60, 90)
         else:
@@ -86,28 +82,27 @@ class Face:
 
     # Changes the mouth from one to another
     def changeMouth(self):
-        if self.__smile == False:
+        if not self.__smile:
             self.__smile = True
-        if self.__smile == True:
+        if self.__smile:
             self.__smile = False
         self.draw_face()
 
     # Changes the circle from color to color
     def changeEmotion(self):
-        if self.__happy == False:
+        if not self.__happy:
             self.__happy = True
-        if self.__happy == True:
+        if self.__happy:
             self.__happy = False
         self.draw_face()
 
     # Changes the eyes from color to color
     def changeEyes(self):
-        if self.__darkEyes == False:
+        if not self.__darkEyes:
             self.__darkEyes = True
-        if self.__darkEyes == True:
+        if self.__darkEyes:
             self.__darkEyes = False
         self.draw_face()
-        
 
 
 def main():

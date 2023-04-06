@@ -1,12 +1,10 @@
-# Harrison Wynn
-# CS1400 - M01
-# Assignment 9
+
 
 import math
 import time
 
 
-class Blobber:
+class Blobster:
     def __init__(self, name, color, radius, height):
         self.__radius = radius
         self.__height = height
@@ -15,13 +13,14 @@ class Blobber:
         self.__time = time.time()
         self.__volume = (math.pi * pow(radius, 2) * self.__height)
 
-    def feedBlobber(self, food):
+    def feedBlobster(self, food):
         if food >= 0:
             self.__radius += food
 
-    def blobberSpeak(self):
+    def blobsterSpeak(self):
         vitals, blobberOK = self.vitalsOK()
-        return ("My name is " + self.__name.capitalize() + ", and I am " + self.__color.lower()) + "\n" + "My current happiness level is " + str(format(vitals, ".2%"))
+        return ("My name is " + self.__name.capitalize() + ", and I am " + self.__color.lower()) + "\n" + \
+               "My current happiness level is " + str(format(vitals, ".2%"))
 
     def vitalsOK(self):
         while True:
