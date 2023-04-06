@@ -1,4 +1,4 @@
-
+# Program attributed from code written by Dr. Chad Mano of Utah State University
 
 from modules.blobster import Pet
 
